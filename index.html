@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wuwani Perera | Portfolio</title>
+  <title>Irangi Wathsala | Portfolio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -12,7 +12,7 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      background: #0a0f1e;
       color: #fff;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -92,153 +92,249 @@
 
     /* Home Section */
     #home {
-      background: transparent;
-      color: #fff;
-      text-align: center;
-      padding: 140px 20px 60px 20px;
       position: relative;
-      min-height: 100vh;
+      min-height: calc(100vh - 74px);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      padding: 70px 20px 90px;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(79, 163, 224, 0.12), transparent 18%),
+        radial-gradient(circle at 10% 78%, rgba(79, 163, 224, 0.08), transparent 14%),
+        linear-gradient(180deg, #111625 0%, #101523 100%);
+      color: #fff;
+      overflow: hidden;
     }
 
-    #home img {
-      width: 220px;
-      height: 220px;
+    #home::before,
+    #home::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(79, 163, 224, 0.07);
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    #home::before {
+      width: 125px;
+      height: 125px;
+      right: 72px;
+      top: 86px;
+    }
+
+    #home::after {
+      width: 96px;
+      height: 96px;
+      left: 56px;
+      bottom: 108px;
+    }
+
+    .home-shell {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .home-copy {
+      max-width: 610px;
+      text-align: left;
+    }
+
+    .home-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 163, 224, 0.25);
+      background: rgba(79, 163, 224, 0.08);
+      color: #4fa3e0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .home-badge::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #4fa3e0;
+      box-shadow: 0 0 0 5px rgba(79, 163, 224, 0.12);
+    }
+
+    .home-title {
+      margin: 0;
+      font-size: clamp(3.4rem, 8vw, 5.3rem);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+    }
+
+    .home-title .accent {
+      display: block;
+      color: #4fa3e0;
+      margin-top: 10px;
+    }
+
+    .home-title .code {
+      color: #4fa3e0;
+      font-size: 0.88em;
+      margin-left: 10px;
+      letter-spacing: -0.08em;
+    }
+
+    .home-copy p {
+      margin: 26px 0 0;
+      max-width: 560px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #d6d8df;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .home-copy p .accent {
+      color: #4fa3e0;
+      font-weight: 600;
+    }
+
+    .home-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 560px;
+      margin: 34px 0 0;
+    }
+
+    .home-stat {
+      text-align: left;
+    }
+
+    .home-stat .value {
+      display: block;
+      color: #4fa3e0;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .home-stat .label {
+      display: block;
+      color: #a9b0bf;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .home-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    #home .btn-primary-home,
+    #home .btn-secondary-home {
+      min-width: 205px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+
+    #home .btn-primary-home {
+      background: #4fa3e0;
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(79, 163, 224, 0.22);
+    }
+
+    #home .btn-secondary-home {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #dfe3ea;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    #home .btn-primary-home:hover,
+    #home .btn-secondary-home:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    #home .btn-primary-home:hover {
+      box-shadow: 0 18px 34px rgba(79, 163, 224, 0.32);
+      background: #64b2ea;
+      color: #fff;
+    }
+
+    #home .btn-secondary-home:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+    }
+
+    .home-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 520px;
+    }
+
+    .home-portrait {
+      position: relative;
+      width: min(100%, 370px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(180deg, #4fa3e0, #4fa3e0);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    }
+
+    .home-portrait img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid #FFB84C;
-      margin-bottom: 20px;
-      animation: float 3s ease-in-out infinite;
-      margin-top: -130px;
+      border: 6px solid #1a1d27;
+      animation: float 3.5s ease-in-out infinite;
+    }
+
+    .home-portrait .floating-chip {
+      position: absolute;
+      right: -8px;
+      bottom: 16px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: #4fa3e0;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 16px 34px rgba(79, 163, 224, 0.32);
     }
 
     @keyframes float {
-      0% {
+      0%, 100% {
         transform: translateY(0);
       }
 
       50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
       }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    #home h1 {
-      font-size: 3rem;
-      color: #00C4FF;
-      text-shadow: 0 0 10px #00C4FF, 0 0 20px #00C4FF, 0 0 30px #00C4FF;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #00C4FF, 0 0 10px #00C4FF, 0 0 15px #00C4FF;
-      }
-
-      to {
-        text-shadow: 0 0 10px #00C4FF, 0 0 20px #00C4FF, 0 0 30px #00C4FF;
-      }
-    }
-
-    #home p {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #ccc;
-      font-family: Segoe UI Black;
-    }
-
-    /* Home Buttons */
-    #home .social-buttons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    #home .social-buttons a {
-      width: 45px;
-      height: 45px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 184, 76, 0.1);
-      color: #fff;
-      font-size: 1.2rem;
-      border: 2px solid #FFB84C;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    #home .social-buttons a:hover {
-      background: #FFB84C;
-      color: #000;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
-    }
-
-    /* Elegant CV Button */
-    #home .btn-cv {
-      margin-top: 20px;
-      padding: 10px 25px;
-      font-size: 1rem;
-      border-radius: 30px;
-      border: 2px solid #FFB84C;
-      background: transparent;
-      color: #FFB84C;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: translateY(0);
-      }
-
-      40% {
-        transform: translateY(-5px);
-      }
-
-      60% {
-        transform: translateY(-2px);
-      }
-    }
-
-    #home .btn-cv:hover {
-      background: #FFB84C;
-      color: #000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
     }
 
     /* Navbar */
@@ -266,7 +362,7 @@
       content: '';
       display: block;
       height: 2px;
-      background: #FFB84C;
+      background: #4fa3e0;
       width: 0;
       transition: width 0.3s;
       position: absolute;
@@ -281,7 +377,7 @@
 
     .navbar-brand {
       font-weight: bold;
-      color: #FFB84C !important;
+      color: #4fa3e0 !important;
       font-size: 1.6rem;
       margin-bottom: 5px;
     }
@@ -307,7 +403,7 @@
       text-align: center;
       margin-bottom: 40px;
       font-weight: bold;
-      color: #FFB84C;
+      color: #4fa3e0;
       animation: slideIn 1s ease-out;
     }
 
@@ -333,7 +429,7 @@
     }
 
     .icon {
-      color: #FFB84C;
+      color: #4fa3e0;
       margin-right: 8px;
     }
 
@@ -387,7 +483,7 @@
 
     .about-card h3 {
       font-size: 1.9rem;
-      color: #FFB84C;
+      color: #4fa3e0;
       margin-bottom: 5px;
     }
 
@@ -398,11 +494,11 @@
     }
 
     .counter-top {
-      color: #FFB84C;
+      color: #4fa3e0;
     }
 
     .counter-bottom {
-      color: #FFB84C;
+      color: #4fa3e0;
     }
 
     /* Experience Timeline */
@@ -410,7 +506,7 @@
       position: relative;
       margin: 40px auto;
       padding-left: 30px;
-      border-left: 2px solid #FFB84C;
+      border-left: 2px solid #4fa3e0;
     }
 
     .timeline-item {
@@ -438,7 +534,7 @@
       top: 0;
       width: 20px;
       height: 20px;
-      background: #FFB84C;
+      background: #4fa3e0;
       border-radius: 50%;
       border: 2px solid #111;
     }
@@ -460,7 +556,7 @@
 
     .timeline-location {
       margin: 5px 0;
-      color: #FFB84C;
+      color: #4fa3e0;
       font-family: Cascadia Code SemiBold;
     }
 
@@ -470,11 +566,84 @@
       font-family: Bierstadt;
     }
 
+    .experience-projects {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(12, 17, 30, 0.72);
+      border: 1px solid rgba(79, 163, 224, 0.14);
+    }
+
+    .experience-projects-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .experience-projects-head h6 {
+      margin: 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: Arial Black;
+    }
+
+    .experience-projects-head p {
+      margin: 4px 0 0;
+      color: #9fb1c8;
+      font-size: 0.9rem;
+      font-family: Bierstadt;
+    }
+
+    .experience-project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .experience-project-card {
+      padding: 14px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .experience-project-card .project-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(79, 163, 224, 0.14);
+      color: #9cd0ff;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .experience-project-card h6 {
+      margin: 10px 0 8px;
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 700;
+      font-family: Arial Black;
+    }
+
+    .experience-project-card p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      font-family: Bierstadt;
+    }
+
     .timeline-date {
       float: right;
       font-size: 0.85rem;
       background: #333;
-      color: #FFB84C;
+      color: #4fa3e0;
       padding: 3px 10px;
       border-radius: 15px;
       margin-top: -25px;
@@ -494,7 +663,7 @@
       text-align: center;
       margin-bottom: 40px;
       font-weight: bold;
-      color: #FFB84C;
+      color: #4fa3e0;
       animation: slideIn 1s ease-out;
     }
 
@@ -509,8 +678,8 @@
 
     .education-location {
       margin: 5px 0;
-      color: #FFA500;
-      /* Updated to orange */
+      color: #4fa3e0;
+      /* Updated to blue */
       font-family: Cascadia Code SemiBold;
     }
 
@@ -520,7 +689,7 @@
     }
 
     #education .card .me-4 i {
-      color: #FFB84C;
+      color: #4fa3e0;
       font-size: 2rem;
     }
 
@@ -540,7 +709,7 @@
 
     #education .card p em {
       font-style: italic;
-      color: #FFB84C;
+      color: #4fa3e0;
     }
 
     #education .card p strong {
@@ -569,9 +738,9 @@
       padding: 10px 25px;
       font-size: 1rem;
       border-radius: 30px;
-      border: 2px solid #FFB84C;
+      border: 2px solid #4fa3e0;
       background: transparent;
-      color: #FFB84C;
+      color: #4fa3e0;
       font-weight: 500;
       transition: all 0.3s ease;
       text-decoration: none;
@@ -579,7 +748,7 @@
     }
 
     #publications .btn-publication .btn-cv:hover {
-      background: #FFB84C;
+      background: #4fa3e0;
       color: #000;
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
@@ -594,12 +763,12 @@
 
     .skills h2 {
       font-weight: bold;
-      color: #FFB84C;
+      color: #4fa3e0;
       margin-bottom: 10px;
     }
 
     .skills p {
-      color: #ffb84d;
+      color: #4fa3e0;
       margin-bottom: 40px;
       color: #ccc;
     }
@@ -624,12 +793,12 @@
     }
 
     .tab-button.active {
-      background: #FFB84C;
+      background: #4fa3e0;
       color: #000;
     }
 
     .tab-button:hover {
-      background: #FFB84C;
+      background: #4fa3e0;
       color: #000;
     }
 
@@ -685,73 +854,166 @@
     /* Projects */
     #projects {
       background: transparent;
-      padding: 60px 20px;
+      padding: 70px 20px;
       margin: 20px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       transition: all 0.3s ease;
     }
 
     #projects h2 {
-      color: #FFB84C;
+      color: #4fa3e0;
       text-align: center;
       margin-bottom: 40px;
       font-weight: bold;
     }
 
-    .project-card {
-      background: rgba(26, 26, 26, 0.8);
-      border-radius: 15px;
-      padding: 20px;
+    .project-intro {
+      max-width: 900px;
+      margin: 0 auto 34px;
       text-align: center;
-      transition: transform 0.3s, background 0.3s;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(79, 163, 224, 0.12);
+      border: 1px solid rgba(79, 163, 224, 0.18);
+      color: #9cd0ff;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-intro p {
+      margin: 14px 0 0;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .project-note {
+      margin: 18px 0 0;
+      padding: 14px 18px;
+      border-left: 3px solid #4fa3e0;
+      border-radius: 0 14px 14px 0;
+      background: rgba(255, 255, 255, 0.03);
+      color: #cbd5e1;
+      font-size: 0.92rem;
+    }
+
+    .project-group {
+      margin-top: 28px;
+    }
+
+    .project-group h3 {
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .project-group p {
+      margin-bottom: 20px;
+      color: #9fb1c8;
+      line-height: 1.7;
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, rgba(20, 26, 40, 0.96), rgba(15, 18, 30, 0.96));
+      border: 1px solid rgba(79, 163, 224, 0.18);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
       animation: fadeInUp 1s ease-out;
     }
 
     .project-card img {
       width: 100%;
-      height: 200px;
+      height: 190px;
       object-fit: cover;
-      margin-bottom: 15px;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      border-bottom: 2px solid #FFB84C;
+      border-radius: 16px;
+      border-bottom: 2px solid #4fa3e0;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      background: rgba(34, 34, 34, 0.8);
+      transform: translateY(-6px);
+      border-color: rgba(79, 163, 224, 0.36);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.36);
     }
 
-    .project-card strong {
-      display: block;
-      margin-bottom: 10px;
-      color: #FFB84C;
+    .project-card .project-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .project-card .project-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(79, 163, 224, 0.12);
+      color: #9cd0ff;
+      border: 1px solid rgba(79, 163, 224, 0.16);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .project-card h4 {
+      margin: 0;
+      color: #4fa3e0;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      font-weight: 700;
     }
 
     .project-card p {
-      color: #ccc;
+      color: #cbd5e1;
       font-size: 0.95rem;
+      line-height: 1.75;
       flex-grow: 1;
     }
 
+    .project-card .project-highlights {
+      margin: 0;
+      padding-left: 18px;
+      color: #d7e6f7;
+      display: grid;
+      gap: 6px;
+      font-size: 0.92rem;
+    }
+
+    .project-card .project-highlights li::marker {
+      color: #4fa3e0;
+    }
+
     .project-card .tech-stack {
-      margin-top: 15px;
+      margin-top: auto;
       display: flex;
-      justify-content: center;
-      gap: 10px;
+      justify-content: flex-start;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .project-card .tech-stack span {
-      background: #333;
-      color: #FFB84C;
+      background: rgba(79, 163, 224, 0.12);
+      color: #9cd0ff;
       padding: 5px 10px;
-      border-radius: 15px;
-      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 163, 224, 0.16);
+      font-size: 0.78rem;
     }
 
     /* Contact Section */
@@ -767,12 +1029,12 @@
       text-align: center;
       margin-bottom: 25px;
       font-weight: bold;
-      color: #FFB84C;
+      color: #4fa3e0;
       animation: slideIn 1s ease-out;
     }
 
     .contact-card {
-      border: 2px solid #FFA500;
+      border: 2px solid #4fa3e0;
       background: rgba(26, 26, 26, 0.8);
       border-radius: 15px;
       padding: 20px;
@@ -786,7 +1048,7 @@
     }
 
     .contact-card .contact-icon i {
-      color: #FFB84C;
+      color: #4fa3e0;
       font-size: 2rem;
     }
 
@@ -802,7 +1064,7 @@
     }
 
     .contact-card a {
-      color: #ffd700;
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -810,11 +1072,28 @@
       text-decoration: underline;
     }
 
+    /*icons */
+    /* Keep all icons normal by default */
+    .skill-card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: none;
+    }
+
+    /* Only fix dark/black icons */
+    .skill-card.tools-dev img[alt="Power BI"],
+    .skill-card.tools-dev img[alt="GitHub"],
+    .skill-card.tools-dev img[alt="Postman"],
+    .skill-card.tools-dev img[alt="Playwright"] {
+      filter: brightness(0) invert(1);
+    }
+
 
     /* Footer */
     footer {
       background: #000;
-      color: #FFB84C;
+      color: #4fa3e0;
       padding: 10px 0;
       text-align: center;
       margin-top: 50px;
@@ -822,6 +1101,59 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      #home {
+        padding: 56px 16px 70px;
+      }
+
+      .home-copy {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .home-badge {
+        margin-bottom: 22px;
+      }
+
+      .home-title {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+      }
+
+      .home-title .accent {
+        margin-top: 6px;
+      }
+
+      .home-copy p,
+      .home-stats {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .home-stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .home-stat {
+        text-align: center;
+      }
+
+      .home-actions {
+        justify-content: center;
+      }
+
+      #home .btn-primary-home,
+      #home .btn-secondary-home {
+        min-width: 180px;
+      }
+
+      .home-visual {
+        min-height: 360px;
+      }
+
+      .home-portrait {
+        width: min(88vw, 300px);
+      }
+
       .about-cards {
         flex-direction: column;
       }
@@ -899,7 +1231,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Wuwani Perera</a>
+      <a class="navbar-brand" href="#">Irangi Wathsala</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -921,17 +1253,48 @@
 
   <!-- Home Section -->
   <section id="home" class="fade-in">
-    <div class="text-center">
-      <img src="wuwani.jpeg">
-      <p>Data Science Graduate | Aspiring Business Analytics Professional</p>
-      <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/wuwani-chathurya/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:wuwani2001@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/WuwaniPerera" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="container home-shell">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="home-copy">
+            <!-- <div class="home-badge">Hello, I'm Irangi</div> -->
+            <h1 class="home-title">I'M A <span class="accent">FULL-STACK DEVELOPER <span class="code">&lt;&gt;</span></span></h1>
+            <p>
+              Passionate about building <span class="accent">seamless digital experiences</span> that solve real-world
+              problems.
+              Crafting clean code with <span class="accent">modern technologies</span> and practical solutions.
+            </p>
+            <div class="home-stats">
+              <div class="home-stat">
+                <span class="value">1.5+</span>
+                <span class="label">Year Experience</span>
+              </div>
+              <div class="home-stat">
+                <span class="value">10+</span>
+                <span class="label">Completed Projects</span>
+              </div>
+              <!-- <div class="home-stat">
+                <span class="value">100%</span>
+                <span class="label">Client Satisfaction</span>
+              </div> -->
+            </div>
+            <div class="home-actions">
+              <a href="#projects" class="btn-primary-home">Explore My Work <i class="fas fa-arrow-right"></i></a>
+              <a href="Irangi Wathsala CV.pdf" class="btn-secondary-home" download>
+                <i class="fas fa-download"></i> Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="home-visual">
+            <div class="home-portrait">
+              <img src="wijesinghe.jpg" alt="Irangi Wathsala portrait">
+              <div class="floating-chip">IW</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="Wuwani Perera - CV.pdf" class="btn-cv" download>
-        <i class="fas fa-download"></i> Download CV
-      </a>
     </div>
   </section>
 
@@ -941,24 +1304,14 @@
     <div class="about-container">
       <div class="about-text">
         <p>
-          I am a Data Science graduate and Junior Data & ERP System Analyst with a strong background in <b> data
-            analytics, business intelligence, and enterprise systems.</b> My professional journey spans developing
-          real-time dashboards, automating KPI reporting, managing ERP implementations, and applying statistical and
-          machine learning techniques to uncover insights that drive business performance.
-          Skilled in <b> Power BI, Grafana, Tableau, SQL, Python, and ERP systems </b>, I focus on transforming complex
-          datasets into actionable intelligence that supports strategic decision-making and operational efficiency. By
-          working closely with cross-functional teams across finance, operations, and IT, I have developed the ability
-          to bridge technical expertise with business requirements to deliver impactful solutions.</br>
-          <br>
-          I am passionate about using <b> advanced analytics and data-driven strategies </b> to solve complex business
-          problems, enhance decision-making, and enable digital transformation. As I prepare to pursue a Master of
-          Business Analytics, I aim to further strengthen my expertise in predictive analytics, data
-          strategy, and business innovation to create meaningful impact in global business environments.
+          I am an Information Technology undergraduate and aspiring Full-Stack Developer focused on building practical digital solutions.
+          My background combines academic projects and professional experience across web development, data analysis, ERP systems, and BI tools.
+          I work comfortably with React, Next.js, TypeScript, Spring Boot, AWS, SQL, and Power BI.
         </p>
       </div>
       <div class="about-cards">
         <div class="about-card">
-          <h3><span class="counter counter-top" data-target="2">0</span>+</h3>
+          <h3><span class="counter counter-top" data-target="1.5">0</span>+</h3>
           <p><b>Years Of Experience</b></p>
         </div>
         <div class="about-card">
@@ -969,7 +1322,7 @@
     </div>
   </section>
 
-  <!-- Updated Experience Timeline -->
+  <!-- Experience Timeline -->
   <section id="experience" class="fade-in">
     <h2>Experience Timeline</h2>
     <div class="timeline">
@@ -981,29 +1334,36 @@
             <h7>Link Natural Products (PVT) LTD</h7>
           </div>
           <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
-            <li>Gather and analyze business requirements and develop solution estimates, ensuring ERP and data solutions
-              align with organizational goals.</li>
-            <li>Design and document technical workflows, data models, and deployment strategies to support process
-              optimization and informed decision-making.</li>
-            <li>Develop ad-hoc reports, dashboards, and statistical analyses to identify trends, evaluate business
-              performance, and provide actionable insights for strategic planning.</li>
-            <li>Collaborate with cross-functional teams (finance, operations, supply chain, and IT) to translate
-              business needs into data-driven ERP solutions.</li>
-            <li>Identify process and system inefficiencies, propose improvements, and document findings to enhance
-              operational workflows and data-driven decision support.</li>
-            <li>Conduct quality assurance, including testing and validation of ERP system functionalities, to ensure
-              data accuracy and system reliability.</li>
-            <li>Oversee ERP system implementation, configuration, integration, and maintenance, ensuring seamless
-              alignment with business processes.</li>
-            <li>Manage data migrations and ensure consistency, integrity, and compliance with data governance and
-              security standards.</li>
-            <li>Provide training, user documentation, and ongoing support to enhance ERP adoption and business users’
-              ability to leverage system insights.</li>
-            <li>Monitor ERP and reporting performance, conduct audits on data accuracy, and recommend improvements for
-              efficiency and business analytics capabilities.</li>
-            <li>Coordinate with vendors, developers, and stakeholders to deliver ERP-related projects (upgrades,
-              integrations, and enhancements) within set timelines and budgets.</li>
+            <li>Gather requirements, estimate solutions, and align ERP and data work with business goals.</li>
+            <li>Design workflows, data models, dashboards, and reports that support analysis and decision-making.</li>
+            <li>Handle ERP implementation, testing, data migration, and stakeholder coordination.</li>
           </ul>
+
+          <div class="experience-projects">
+            <div class="experience-projects-head">
+              <div>
+                <h6>Work project highlights</h6>
+                <p>Key deliverables shown here instead of in the main project gallery.</p>
+              </div>
+            </div>
+            <div class="experience-project-grid">
+              <div class="experience-project-card">
+                <span class="project-chip">ERP Delivery</span>
+                <h6>Implementation and upgrade support</h6>
+                <p>Supported ERP configuration, integration, testing, and vendor coordination for business changes.</p>
+              </div>
+              <div class="experience-project-card">
+                <span class="project-chip">Reporting</span>
+                <h6>KPI dashboards and ad-hoc analysis</h6>
+                <p>Created reporting outputs that track performance, expose trends, and guide decision-making.</p>
+              </div>
+              <div class="experience-project-card">
+                <span class="project-chip">Data Governance</span>
+                <h6>Migrations and data quality</h6>
+                <p>Handled migrations, validation, and documentation with a focus on integrity and consistency.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="timeline-item">
@@ -1014,29 +1374,31 @@
             <h7>Colour Max Lanka (Pvt) Ltd</h7>
           </div>
           <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
-            <li>Collected, cleaned, and transformed raw data from multiple business units to ensure accuracy and
-              readiness for analysis.</li>
-            <li>Conducted exploratory data analysis (EDA) to uncover hidden trends, correlations, and outliers in sales
-              and operational data.</li>
-            <li>Designed interactive dashboards and automated reporting systems using BI tools, reducing manual
-              reporting time and improving accessibility.</li>
-            <li>Created forecasting models to predict sales performance and resource needs, supporting data-driven
-              planning.</li>
-            <li>Provided monthly and ad-hoc analytical reports to senior management, directly influencing marketing
-              campaigns, pricing strategies, and operational improvements.</li>
-            <li>Partnered with cross-functional teams (sales, finance, operations) to understand business needs and
-              deliver tailored analytics solutions.</li>
-            <li>Measured and monitored KPIs, including sales growth, customer retention, and operational efficiency, to
-              guide strategic decision-making.</li>
-            <li>Developed visualizations and presentations that simplified complex datasets, enabling non-technical
-              stakeholders to quickly grasp insights.</li>
-            <li>Applied statistical methods (trend analysis, hypothesis testing, correlation analysis) to validate
-              business assumptions and support strategic initiatives.</li>
-            <li>Recommended process improvements and efficiency gains by identifying gaps in data workflows and
-              reporting structures.</li>
-            <li>Ensured compliance with data governance standards by maintaining data integrity, security, and
-              confidentiality across reports and dashboards.</li>
+            <li>Prepared data for analysis and explored sales and operational trends.</li>
+            <li>Built dashboards, automated reporting, and created forecasting models.</li>
+            <li>Delivered insights to management and supported data-driven decisions.</li>
           </ul>
+
+          <div class="experience-projects">
+            <div class="experience-projects-head">
+              <div>
+                <h6>Work project highlights</h6>
+                <p>Short summaries of the most visible deliverables.</p>
+              </div>
+            </div>
+            <div class="experience-project-grid">
+              <div class="experience-project-card">
+                <span class="project-chip">Dashboards</span>
+                <h6>Sales and operations BI reporting</h6>
+                <p>Built dashboards and automated reporting to reduce manual effort and improve visibility.</p>
+              </div>
+              <div class="experience-project-card">
+                <span class="project-chip">Forecasting</span>
+                <h6>Performance and demand modeling</h6>
+                <p>Used analysis and forecasting to support planning, pricing, and customer retention decisions.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="timeline-item">
@@ -1047,21 +1409,31 @@
             <h7>Dialog Axiata PLC</h7>
           </div>
           <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
-            <li>Built and maintained real-time dashboards using Grafana and Power BI, enabling management to monitor
-              KPIs and performance metrics more effectively.</li>
-            <li>Performed data cleansing, preprocessing, and validation to ensure accuracy, consistency, and reliability
-              across large and diverse datasets.</li>
-            <li>Conducted consumer and market data analysis to support research, product innovation, and strategic
-              decision-making.</li>
-            <li>Contributed to the development of the Govimithuru chatbot for Sri Lanka’s agricultural sector, improving
-              digital access to agricultural knowledge.</li>
-            <li>Assisted in AWS cloud deployment and supported machine learning model training, enhancing chatbot
-              conversational performance and scalability.</li>
-            <li>Collaborated with cross-functional innovation teams to design and implement data-driven solutions for
-              emerging business and customer needs.</li>
-            <li>Documented processes, insights, and technical findings to support knowledge sharing and future product
-              development initiatives.</li>
+            <li>Built and maintained Grafana and Power BI dashboards for KPI monitoring.</li>
+            <li>Cleaned and analyzed data to support research and product innovation.</li>
+            <li>Supported the Govimithuru chatbot, AWS deployment, and ML training.</li>
           </ul>
+
+          <div class="experience-projects">
+            <div class="experience-projects-head">
+              <div>
+                <h6>Work project highlights</h6>
+                <p>Compact highlights from the internship work.</p>
+              </div>
+            </div>
+            <div class="experience-project-grid">
+              <div class="experience-project-card">
+                <span class="project-chip">Monitoring</span>
+                <h6>Real-time Grafana dashboards</h6>
+                <p>Created live reporting views for KPI tracking and operational monitoring.</p>
+              </div>
+              <div class="experience-project-card">
+                <span class="project-chip">Innovation</span>
+                <h6>Govimithuru chatbot support</h6>
+                <p>Helped build and deploy a chatbot for Sri Lanka’s agricultural knowledge delivery.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1074,7 +1446,7 @@
       <div class="col-md-10">
         <div class="card p-4 d-flex flex-row align-items-center">
           <div class="me-4">
-            <i class="fas fa-graduation-cap" style="color:#FFB84C;"></i>
+            <i class="fas fa-graduation-cap" style="color:#4fa3e0;"></i>
           </div>
           <div>
             <h5 class="mb-1">B.Sc (Hons) in Information Technology Specialized in Data Science</h5>
@@ -1091,7 +1463,7 @@
       <div class="col-md-10">
         <div class="card p-4 d-flex flex-row align-items-center">
           <div class="me-4">
-            <i class="fas fa-book-open" style="color:#FFB84C;"></i>
+            <i class="fas fa-book-open" style="color:#4fa3e0;"></i>
           </div>
           <div>
             <h5 class="mb-1">G.C.E. Advanced Level | Physical Science Stream - Mathematics</h5>
@@ -1105,7 +1477,7 @@
       <div class="col-md-10">
         <div class="card p-4 d-flex flex-row align-items-center">
           <div class="me-4">
-            <i class="fas fa-school" style="color:#FFB84C;"></i>
+            <i class="fas fa-school" style="color:#4fa3e0;"></i>
           </div>
           <div>
             <h5 class="mb-1">G.C.E. Ordinary Level</h5>
@@ -1121,115 +1493,155 @@
 
   <!-- Projects -->
   <section id="projects" class="fade-in">
-    <h2>Projects</h2>
-    <p class="text-center" style="color: #fff;">Showcasing my capabilities through a diverse collection of projects.</p>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="project-card">
-          <img
-            src="https://c8.alamy.com/comp/D1HRNR/last-weekend-before-christmas-shoppers-form-long-queues-at-waitrose-D1HRNR.jpg">
-          <strong>Final Year Research – Dynamic Queue Management System</strong>
-          <p>Developed an IoT and CCTV-based queue monitoring system with real-time item counting. Applied machine
-            learning algorithms to optimize customer distribution in high-traffic supermarkets.</p>
-          <div class="tech-stack">
-            <span>IoT</span>
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>GitHub</span>
-            <span>AWS</span>
+    <div class="project-intro">
+      <span class="section-kicker">Academic portfolio</span>
+      <h2>Projects</h2>
+      <p>Academic work is grouped here as a visual card grid. Company-related deliverables stay summarized in the Experience section so each area stays focused.</p>
+      <div class="project-note">This layout keeps the card experience while using image covers to make each academic project more distinctive.</div>
+    </div>
+
+    <div class="project-group">
+      <h3>Research and data systems</h3>
+      <p>Projects centered on analytics, automation, simulation, and applied machine learning.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="paper.png" alt="Dynamic Queue Management System cover">
+            <div class="project-card-top">
+              <span class="project-tag">Final Year Research</span>
+              <i class="fas fa-people-arrows" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Dynamic Queue Management System</h4>
+            <p>Built an IoT and CCTV-based queue monitoring system with real-time item counting to optimize customer flow in high-traffic supermarkets.</p>
+            <ul class="project-highlights">
+              <li>Real-time queue detection and monitoring</li>
+              <li>Machine learning-based distribution logic</li>
+            </ul>
+            <div class="tech-stack">
+              <span>IoT</span>
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>AWS</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="image2.jpg">
-          <strong>Data Warehouse and Business Intelligence Project</strong>
-          <p>Designed and implemented a Power BI dashboard to provide actionable business intelligence for management
-            decision-making. Developed data models and interactive visualizations to track key performance indicators
-            and business trends.</p>
-          <div class="tech-stack">
-            <span>Power BI</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="image2.jpg" alt="Business intelligence project cover">
+            <div class="project-card-top">
+              <span class="project-tag">BI Project</span>
+              <i class="fas fa-chart-line" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Data Warehouse and Business Intelligence Project</h4>
+            <p>Designed a Power BI dashboard with data models and interactive visualizations to track business trends and support decision-making.</p>
+            <ul class="project-highlights">
+              <li>Dashboards for KPI visibility</li>
+              <li>Business-focused data modeling</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Power BI</span>
+              <span>Data Modeling</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="https://tse4.mm.bing.net/th/id/OIP.XWULrM_JMPi8ATGD1g7rTwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
-          <strong>Internet of Things (IoT) – Smart Home System</strong>
-          <p>Built a temperature and humidity monitoring system with predictive analytics. Designed a real-time
-            dashboard using Node-RED and applied ARIMA forecasting.</p>
-          <div class="tech-stack">
-            <span>Arduino</span>
-            <span>Node-RED</span>
-            <span>Python</span>
-            <span>Machine Learning</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="image1.jpeg" alt="Smart home system cover">
+            <div class="project-card-top">
+              <span class="project-tag">IoT</span>
+              <i class="fas fa-house-signal" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Internet of Things (IoT) Smart Home System</h4>
+            <p>Created a temperature and humidity monitoring system with a real-time dashboard and predictive analytics using Node-RED and ARIMA forecasting.</p>
+            <ul class="project-highlights">
+              <li>Live environmental monitoring</li>
+              <li>Forecasting with ARIMA</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Arduino</span>
+              <span>Node-RED</span>
+              <span>Python</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.IPUJzzTjDOUTFjc47XbC9QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
-          <strong>Real-time Grafana Dashboard for Fuel Data Analysis</strong>
-          <p>Created a real-time Grafana dashboard to monitor fuel sensor data across multiple sites. Integrated MySQL
-            databases with Grafana for dynamic visualization and performance tracking.</p>
-          <div class="tech-stack">
-            <span>Grafana</span>
-            <span>MySQL</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="wuwani.jpeg" alt="Movie recommendation engine cover">
+            <div class="project-card-top">
+              <span class="project-tag">ML</span>
+              <i class="fas fa-film" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Personalized Movie Recommendation Engine</h4>
+            <p>Implemented content-based and collaborative filtering to deliver recommendations through a lightweight Streamlit interface.</p>
+            <ul class="project-highlights">
+              <li>Recommendation pipeline design</li>
+              <li>Interactive prototype delivery</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Jupyter Notebook</span>
+              <span>Streamlit</span>
+              <span>Machine Learning</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.gUA-KAerNOHu9EOGWXAukwHaEN?rs=1&pid=ImgDetMain&o=7&rm=3">
-          <strong>Personalized Movie Recommendation Engine</strong>
-          <p>Implemented content-based and collaborative filtering for personalized recommendations. Built an
-            interactive interface with Streamlit for enhanced user experience.</p>
-          <div class="tech-stack">
-            <span>Jupyter Notebook</span>
-            <span>Streamlit</span>
-            <span>Machine Learning</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="image.png" alt="Mobile phone shop management system cover">
+            <div class="project-card-top">
+              <span class="project-tag">Web App</span>
+              <i class="fas fa-store" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Mobile Phone Shop Management System</h4>
+            <p>Developed a web-based management system to automate daily shop operations and improve productivity, security, and accuracy.</p>
+            <ul class="project-highlights">
+              <li>Inventory and business process automation</li>
+              <li>CRUD-based operational workflow</li>
+            </ul>
+            <div class="tech-stack">
+              <span>MERN stack</span>
+              <span>MongoDB</span>
+              <span>Figma</span>
+              <span>GitHub</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="image.png">
-          <strong>Mobile Phone Shop Management System</strong>
-          <p>Developed a web-based application is a mobile phone shop management system developed to automate the
-            business process of a mobile phone shop and improve the productivity, efficiency, security and accuracy in
-            business-related tasks.</p>
-          <div class="tech-stack">
-            <span>MERN stack</span>
-            <span>MongoDB</span>
-            <span>Postman</span>
-            <span>GitHub</span>
-            <span>Figma</span>
-            <span>VS Code</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="picture.png" alt="Mobile application development cover">
+            <div class="project-card-top">
+              <span class="project-tag">Mobile App</span>
+              <i class="fas fa-mobile-screen" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Mobile Application Development</h4>
+            <p>Built a productivity and wellness app with diary, goals, mood tracking, and health tracking features, including a BMI calculator.</p>
+            <ul class="project-highlights">
+              <li>User-centric mobile experience</li>
+              <li>Goal, mood, and health tracking</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>GitHub</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="picture.png">
-          <strong>Mobile Application Development</strong>
-          <p>Developed mobile application with a diary to write the day, a goal manager to manage and keep track of
-            goals, a mood tracker and a health tracker which comes with a BMI calculator and an exercise time tracker.
-          </p>
-          <div class="tech-stack">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>GitHub</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-card">
-          <img src="image1.jpeg">
-          <strong>Sales Data Analysis Dashboard</strong>
-          <p>Developed dashboard to provide interactive insights into sales performance, trends, and key metrics—helping
-            to drive data-driven decisions with clarity and confidence.</p>
-          <div class="tech-stack">
-            <span>Power BI</span>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="paper.png" alt="Sales data analysis dashboard cover">
+            <div class="project-card-top">
+              <span class="project-tag">Analytics</span>
+              <i class="fas fa-square-poll-vertical" style="color:#4fa3e0;"></i>
+            </div>
+            <h4>Sales Data Analysis Dashboard</h4>
+            <p>Developed an interactive dashboard to surface sales trends and KPIs for clearer, data-driven business decisions.</p>
+            <ul class="project-highlights">
+              <li>Interactive sales insights</li>
+              <li>Decision-support reporting</li>
+            </ul>
+            <div class="tech-stack">
+              <span>Power BI</span>
+              <span>Reporting</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1252,122 +1664,134 @@
   <section class="skills" id="skills">
     <h2>Tech Stack</h2>
     <p>I rely on this tech stack to create robust and elegant solutions.</p>
-    <div class="skills-tabs">
-      <button class="tab-button active" data-category="all">All Skills</button>
-      <button class="tab-button" data-category="data-vis">Data Visualization</button>
-      <button class="tab-button" data-category="databases">Databases</button>
-      <button class="tab-button" data-category="programming">Programming</button>
-      <button class="tab-button" data-category="tools-dev">Tools & Development</button>
-    </div>
     <div class="skills-grid">
-      <div class="skill-card data-vis">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg" alt="Power BI"
-          style="filter: invert(73%) sepia(59%) saturate(5232%) hue-rotate(356deg) brightness(95%) contrast(89%);">
-        <span>Power BI</span>
-        <small class="skill-type">BI Tool</small>
-      </div>
-      <div class="skill-card data-vis">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
-        <span>Grafana</span>
-        <small class="skill-type">Dashboard Tool</small>
-      </div>
-      <div class="skill-card data-vis">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tableau.svg" alt="Tableau"
-          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
-        <span>Tableau</span>
-        <small class="skill-type">BI Tool</small>
-      </div>
-      <div class="skill-card data-vis">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftexcel.svg" alt="Excel"
-          style="filter: invert(45%) sepia(95%) saturate(381%) hue-rotate(73deg) brightness(89%) contrast(91%);">
-        <span>Excel</span>
-        <small class="skill-type">Spreadsheet Tool</small>
-      </div>
-      <div class="skill-card databases">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-        <span>MySQL</span>
-        <small class="skill-type">Database</small>
-      </div>
-      <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/figma.svg" alt="Figma"
-          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
-        <span>Figma</span>
-        <small class="skill-type">Design Tool</small>
-      </div>
-      <div class="skill-card databases">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
-          alt="SQL Server">
-        <span>SQL Server</span>
-        <small class="skill-type">Database</small>
-      </div>
+
       <div class="skill-card programming">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
-        <span>R</span>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+        <span>React</span>
+        <small class="skill-type">Frontend Framework</small>
+      </div>
+
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+        <span>Next.js</span>
+        <small class="skill-type">Full-Stack Framework</small>
+      </div>
+
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+          alt="TypeScript">
+        <span>TypeScript</span>
         <small class="skill-type">Programming Language</small>
       </div>
+
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript">
+        <span>JavaScript</span>
+        <small class="skill-type">Programming Language</small>
+      </div>
+
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+        <span>Java</span>
+        <small class="skill-type">Programming Language</small>
+      </div>
+
       <div class="skill-card programming">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
         <span>Python</span>
         <small class="skill-type">Programming Language</small>
       </div>
-      <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-        <span>VS Code</span>
-        <small class="skill-type">IDE</small>
-      </div>
-      <div class="skill-card databases">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL">
-        <span>SQL</span>
-        <small class="skill-type">Query Language</small>
-      </div>
-      <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Cloud Platforms">
-        <span>Cloud Platforms</span>
-        <small class="skill-type">Platform</small>
-      </div>
+
       <div class="skill-card programming">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Machine Learning">
-        <span>Machine Learning</span>
-        <small class="skill-type">Library</small>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+        <span>Spring Boot</span>
+        <small class="skill-type">Backend Framework</small>
       </div>
-      <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/firebase.svg" alt="Firebase"
-          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
-        <span>Firebase</span>
-        <small class="skill-type">Backend Service</small>
+
+      <div class="skill-card databases">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <span>MySQL</span>
+        <small class="skill-type">Database</small>
       </div>
-      <div class="skill-card tools-dev">
-        <img src="https://cdn-icons-png.flaticon.com/512/2761/2761118.png" alt="ERP">
-        <span>ERP</span>
-        <small class="skill-type">System</small>
-      </div>
+
       <div class="skill-card databases">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
         <span>MongoDB</span>
         <small class="skill-type">Database</small>
       </div>
-      <div class="skill-card programming">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT - Arduino">
-        <span>IoT</span>
-        <small class="skill-type">Technology</small>
-      </div>
+
       <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+        <span>Firebase</span>
+        <small class="skill-type">Backend Service</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+          alt="AWS">
+        <span>AWS Cloud</span>
+        <small class="skill-type">Cloud Platform</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
         <span>GitHub</span>
         <small class="skill-type">Version Control</small>
       </div>
+
       <div class="skill-card tools-dev">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="Postman"
-          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
-        <span>Postman</span>
-        <small class="skill-type">API Tool</small>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+        <span>Figma</span>
+        <small class="skill-type">UI/UX Design</small>
       </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="Postman">
+        <span>Postman</span>
+        <small class="skill-type">API Testing</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/playwright.svg" alt="Playwright">
+        <span>Playwright</span>
+        <small class="skill-type">Test Automation</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg" alt="Power BI">
+        <span>Power BI</span>
+        <small class="skill-type">Data Visualization</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+        <span>Docker</span>
+        <small class="skill-type">Containerization</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+        <span>VS Code</span>
+        <small class="skill-type">IDE</small>
+      </div>
+
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
+          alt="IntelliJ IDEA">
+        <span>IntelliJ IDEA</span>
+        <small class="skill-type">IDE</small>
+      </div>
+
       <div class="skill-card">
         <img src="https://raw.githubusercontent.com/SamHerbert/SVG-Loaders/master/svg-loaders/three-dots.svg"
-          alt="Learning More..." width="48" />
-        <span>More to Go...</span>
-        <small class="skill-type">Ongoing</small>
+          alt="Learning More..." width="48">
+        <span>Always Learning</span>
+        <small class="skill-type">Growth Mindset</small>
       </div>
+
     </div>
   </section>
 
@@ -1378,7 +1802,8 @@
         <div class="card contact-card">
           <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
             <h2>Get In Touch </h2>
-            <img src="paper.png" width="50px">
+            <img src="paper.png" width="50px"
+              style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
           </div>
 
           <div class="first-child p">
@@ -1387,13 +1812,13 @@
           </div>
           <div class="d-flex flex-column align-items-center">
             <div>
-              <p><i class="fas fa-phone"></i> (+94) 77 1018 607</p>
-              <p><i class="fas fa-envelope"></i>
-                <a href="mailto:wuwani2001@gmail.com">wuwani2001@gmail.com</a>
+              <p><i class="fas fa-phone" style="color: #4fa3e0;"></i> (+94) 76 4292 507</p>
+              <p><i class="fas fa-envelope" style="color: #4fa3e0;"></i>
+                <a href="mailto:irangiwathsala2001@gmail.com">irangiwathsala2001@gmail.com</a>
               </p>
-              <p><i class="fab fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/wuwani-chathurya/"
-                  target="_blank">linkedin.com/in/wuwani-chathurya</a>
+              <p><i class="fab fa-linkedin" style="color: #4fa3e0;"></i>
+                <a href="https://www.linkedin.com/in/irangi-wathsala"
+                  target="_blank">linkedin.com/in/irangi-wathsala</a>
               </p>
             </div>
           </div>
@@ -1404,7 +1829,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Wuwani Perera. All Rights Reserved.</p>
+    <p>&copy; 2026 Irangi Wathsala. All Rights Reserved.</p>
   </footer>
 
   <!-- Bootstrap JS -->
@@ -1523,8 +1948,3 @@
 </body>
 
 </html>
-
-
-
-
-
